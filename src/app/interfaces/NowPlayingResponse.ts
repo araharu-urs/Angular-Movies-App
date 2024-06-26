@@ -2,7 +2,7 @@
 export interface NowPlayingResponse {
   dates: Dates,
   pages: number,
-  results: Movie,
+  results: Movie[],
   total_pages: number,
   total_results: number
 }

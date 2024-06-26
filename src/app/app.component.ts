@@ -8,12 +8,4 @@ import { MoviesService } from './services/movies.service';
 })
 export class AppComponent {
   title = 'MoviesApp';
-
-  constructor( private movieService: MoviesService) {
-    this.movieService.getNowPlayingData()
-    .subscribe( result => {
-
-      console.log(result);
-    })
-  }
 }
