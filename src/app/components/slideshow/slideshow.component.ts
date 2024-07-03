@@ -1,18 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/NowPlayingResponse';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
   styleUrl: './slideshow.component.css'
 })
-export class SlideshowComponent {
+export class SlideshowComponent implements OnInit, AfterViewInit {
+
   @Input() movies: Movie[] = [];
 
+  public mySwiper!: Swiper;
+
   constructor() {}
+  ngAfterViewInit(): void {
+    this.mySwiper = new Swiper('.swiper', {
+      loop: true,
+    });
+  }
 
   ngOnInit(): void {
-    console.log('slide shoiw coponent');
-    console.log(this.movies);
+
+  }
+
+  onSlideNext() {
+    this.mySwiper.slideNext()
+  }
+
+  onSlidePrev() {
+    this.mySwiper.slidePrev()
   }
 }

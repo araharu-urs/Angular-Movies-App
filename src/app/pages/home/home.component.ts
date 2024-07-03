@@ -15,13 +15,7 @@ export class HomeComponent {
   ngOnInit(): void {
     this.movieService.getNowPlayingData()
     .subscribe( result => {
-
       this.movies = result.results;
-      console.log(this.movies);
-      console.log('-----------------');
-      console.log(this.movies[0]);
-      console.log('-----------------');
-      console.log(this.movies[1]);
     })
   }
 }
