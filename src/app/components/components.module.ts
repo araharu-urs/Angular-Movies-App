@@ -4,12 +4,16 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { MoviesPosterGridComponent } from './movies-poster-grid/movies-poster-grid.component';
+import { RatingComponent } from './rating/rating.component';
+import { FloorPipe } from '../pipes/floor/floor.pipe';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     SlideshowComponent,
-    MoviesPosterGridComponent
+    MoviesPosterGridComponent,
+    RatingComponent,
   ],
   exports: [
     NavbarComponent,
@@ -18,7 +22,8 @@ import { MoviesPosterGridComponent } from './movies-poster-grid/movies-poster-gr
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

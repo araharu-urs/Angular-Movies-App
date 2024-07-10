@@ -1,0 +1,13 @@
+<div class="rating">
+  <span *ngFor="let star of stars; let i = index"
+        class="star"
+        [class.disabled]="disabled"
+        [class.selected]="i < rating"
+        (click)="disabled ? null : rate(i + 1)"
+        (mouseover)="disabled ? null : hover(i + 1)"
+        (mouseleave)="disabled ? null : leave()">
+        <i class="fa"
+        [ngClass]="{'fa-star': i < hovered || i < rating, 'fa-star-o': i >= hovered && i >= rating}">
+     </i>
+  </span>
+</div>
