@@ -12,10 +12,13 @@
   height: auto;
   width: auto;
   padding: 5px 10px;
+  background-color: antiquewhite;
+  align-self: unset;
 }
 
 .mi-estilo-personalizado {
   color: #FFF;
+  border-radius: 10px;
   font-size: 120%;
 }
 
@@ -26,8 +29,17 @@
 
 .mi-estilo2 {
   color: red;
+  padding: 10px;
+  border-top: 1px;
+  border-width: 10px;
+  border-color: white;
+  padding-left: 45px;
 }
 
 .mi-estilo3 {
   color: orange;
+}
+
+.hola-mundo {
+  border-radius: 15px;
 }
