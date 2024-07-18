@@ -1,3 +1,11 @@
-.style-test {
-  background-color: brown;
+.estilo-de-prueba {
+  background-color: blue;
+  font-size: 10 px;
+  margin: 10px 10px;
+  padding: 5px 5px;
+  display: inline-block;
+}
+
+.mi-estilo-personalizado {
+  color: #FFF;
 }
