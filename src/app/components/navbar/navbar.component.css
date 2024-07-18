@@ -1,5 +1,6 @@
 .style-test {
   background-color: brown;
+  margin: 5px 10px;
   padding: auto;
   border-top: 1px;
   border-width: 10px;
@@ -10,10 +11,12 @@
   background-color: white;
   height: auto;
   width: auto;
+  padding: 5px 10px;
 }
 
 .mi-estilo-personalizado {
   color: #FFF;
+  font-size: 120%;
 }
 
 .mi-estilo1 {
