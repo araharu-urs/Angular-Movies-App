@@ -1,3 +1,17 @@
 .style-test {
   background-color: brown;
+  padding: auto;
+  border-top: 1px;
+  border-width: 10px;
+  border-color: white;
+}
+
+.change-background {
+  background-color: white;
+  height: auto;
+  width: auto;
+}
+
+.change-textColor {
+  color: red;
 }
