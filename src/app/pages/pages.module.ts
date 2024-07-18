@@ -4,6 +4,8 @@ import { HomeComponent } from './home/HomeComponent';
 import { MovieComponent } from './movie/movie.component';
 import { SearchComponent } from './search/search.component';
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from '../pipes/pipes.module';
+import { RatingComponent } from '../components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { ComponentsModule } from '../components/components.module';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule,
   ]
 })
 export class PagesModule { }

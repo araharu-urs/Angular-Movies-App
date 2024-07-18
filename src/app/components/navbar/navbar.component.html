@@ -6,10 +6,17 @@
 
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Movie" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-inline my-2 my-lg-0">
+      <input #txtBuscar
+      (keyup.enter)="searchMovie( txtBuscar.value )"
+      class="form-control mr-2"
+      type="search"
+      placeholder="Buscar película"
+      aria-label="Search">
+
+      <button (click)="searchMovie( txtBuscar.value )"
+                 class="btn btn-outline-success" type="submit">Buscar</button>
+    </div>
 
   </div>
 </nav>

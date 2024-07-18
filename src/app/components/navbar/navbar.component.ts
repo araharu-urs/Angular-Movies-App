@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
+  constructor( private router: Router ) { }
+
+  ngOnInit(): void {
+  }
+
+  searchMovie(value: string) {
+
+    value = value.trim();
+
+    if ( value.length === 0 ) {
+      return;
+    }
+
+    this.router.navigate(['/search', value ]);
+    console.log(value);
+  }
 }

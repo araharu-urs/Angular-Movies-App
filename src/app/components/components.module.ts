@@ -7,6 +7,7 @@ import { MoviesPosterGridComponent } from './movies-poster-grid/movies-poster-gr
 import { RatingComponent } from './rating/rating.component';
 import { FloorPipe } from '../pipes/floor/floor.pipe';
 import { PipesModule } from '../pipes/pipes.module';
+import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,14 @@ import { PipesModule } from '../pipes/pipes.module';
     SlideshowComponent,
     MoviesPosterGridComponent,
     RatingComponent,
+    CastSlideshowComponent,
   ],
   exports: [
     NavbarComponent,
     SlideshowComponent,
-    MoviesPosterGridComponent
+    MoviesPosterGridComponent,
+    RatingComponent,
+    CastSlideshowComponent
   ],
   imports: [
     CommonModule,

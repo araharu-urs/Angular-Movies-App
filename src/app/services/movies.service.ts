@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Movie, NowPlayingResponse } from '../interfaces/NowPlayingResponse';
+import { Cast, CreditsResponse } from '../interfaces/credits-response';
+import { MovieResponse } from '../interfaces/movie-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
 
-  private baseUrl: String = 'https://api.themoviedb.org/3';
-  private moviesPage = 1;
-
   public loading = false;
+  private moviesPage = 1;
+  private baseUrl: String = 'https://api.themoviedb.org/3';
 
   constructor( private http: HttpClient) { }
 
@@ -40,5 +41,40 @@ export class MoviesService {
         this.loading = false;
       })
     );
+  }
+
+  getDetailMovie( id: string ) {
+
+    return this.http.get<MovieResponse>(`${ this.baseUrl }/movie/${ id }`, {
+      params: this.params
+    }).pipe(
+      catchError( err => of(null) )
+    )
+
+  }
+
+  getCast( id: string ):Observable<Cast[]> {
+
+    return this.http.get<CreditsResponse>(`${ this.baseUrl }/movie/${ id }/credits`, {
+      params: this.params
+    }).pipe(
+      map( resp => resp.cast ),
+      catchError( err => of([]) ),
+    );
+  }
+
+  searchMovie( stValue: string ): Observable<Movie[]> {
+
+    const params = {...this.params, page: '1', query: stValue };
+
+    return this.http.get<NowPlayingResponse>(`${ this.baseUrl }/search/movie`, {
+      params
+    }).pipe(
+      map( resp => resp.results )
+    )
+  }
+
+  resetCarteleraPage() {
+    this.moviesPage = 1;
   }
 }
