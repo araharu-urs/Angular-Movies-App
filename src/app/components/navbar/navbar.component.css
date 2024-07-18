@@ -10,10 +10,13 @@
   background-color: white;
   height: auto;
   width: auto;
+  background-color: antiquewhite;
+  align-self: unset;
 }
 
 .mi-estilo-personalizado {
   color: #FFF;
+  border-radius: 10px;
 }
 
 .mi-estilo1 {
@@ -23,4 +26,10 @@
 
 .mi-estilo2 {
   color: red;
+  padding: 10px;
+  border-top: 1px;
+  border-width: 10px;
+  border-color: white;
+  padding-left: 45px;
 }
+
